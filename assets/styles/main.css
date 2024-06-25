@@ -14,6 +14,10 @@
     --amarelo: #C39F00;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -43,6 +47,13 @@ button {
     border: none;
     padding: .375rem 5rem;
     width: fit-content;
+    transition: 0.9s;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #dab203;
+    box-shadow: inset -10px -5px 5px rgba(0, 0, 0, 0.151);
 }
 
 section{
@@ -103,6 +114,12 @@ section{
     color: var(--text-bege);
     font-size: .875rem;
     font-weight: 500;
+    transition: 0.3s;
+}
+
+.inicio .container .menu #navegacao a:hover{
+    color: var(--amarelo);
+    transform: scale(1.1);
 }
 
 .inicio .container .menu img {
@@ -152,6 +169,7 @@ section{
     justify-content: end;
     width: 40%;
 }
+
 .inicio__conteudo .baloes img{
     height: 100%;
     margin-right: 15%;
@@ -188,7 +206,8 @@ section{
 
 .quem-somos__conteudo p{
     color: var(--text-cinza);
-    font-size: 1.5rem;
+    font-size: 2rem;
+    width: 95%;
 }
 
 .quem-somos__imagem{
@@ -210,11 +229,11 @@ section{
 
 
 .midia {
-    width: inherit;
-    height: 80dvh;
+    width: 100%;
+    height: 70dvh;
 }
 
-.midia .container {
+.midia .container{
     width: inherit;
     height: inherit;
     display: flex;
@@ -234,7 +253,7 @@ section{
     font-weight: 600;
 }
 
-.midia__imagens{
+.midia__caixas{
     display: inherit;
     flex-direction: row;
     gap: 2rem;
@@ -242,23 +261,27 @@ section{
     padding: 2rem 0 3rem 0;
 }
 
-.midia__imagens .imagens {
+.midia__caixas .caixa {
     background-color: var(--branco);
     border-radius: 1.5rem;
-    width: 25%;
+    width: 400px;
     display: inherit;
     flex-direction: column;
     align-items: center;
     padding-bottom: .5%; 
+    overflow: hidden;
 }
 
-.midia__imagens .imagens img{
+.midia__caixas .caixa img{
+    object-fit: cover;
+    height: 220px;
     width: 100%;
 }
 
-.midia__imagens .imagens p{
+.midia__caixas .caixa p{
     color: var(--text-cinza);
     width: 85%;
+    height: 10%;
     font-size: 1.175rem;
     line-height: 2.25rem;
     text-align: center;
@@ -317,7 +340,8 @@ section{
     align-items: center;
     background-color: var(--branco);
     border-radius: 1.5rem;
-    width: 25%;
+    width: 400px;
+    height: 350px;
     padding: 1.5%;
     gap: .625rem;
 }
@@ -332,8 +356,9 @@ section{
     gap: 2.75rem;
 }
 
-.premiacoes__premios .premio .medals .medal{
+.premiacoes__premios .premio .medals span{
     display: flex;
+    align-items: center;
     gap: .25rem;
 }
 
@@ -388,8 +413,15 @@ section{
     gap: 1rem;
 }
 
-.redes__logos img {
-    width: 20%;
+.redes__logos .logo{
+    width: 3.5rem;
+    transition: 0.3s;
+}
+
+.redes__logos .logo:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    fill: #dab203;
 }
 
 .redes .container-background-blue{
@@ -417,4 +449,102 @@ footer {
 footer #codelab{
     color:#5ED8FF;
     ;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 1rem 2.5rem 2.5rem 2.5rem;
+    border: 1px solid #888;
+    border-radius: 25px;
+    width: 50%;
+}
+
+.modal-olimpiada {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-premiacoes{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-item{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.modal-item h2 {
+    color: #303030;
+}
+
+.modal-premiacoes ol{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .375rem;
+}
+
+.modal-premiacoes ol li{
+    display: flex;
+    color: var(--text-cinza);
+    font-size: 1rem;
+    font-weight: 500;
+    gap: .375rem;
+}
+
+.foto-campeonato{
+    width: 4rem;
+}
+
+.texto-campeonato{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #303030;
+}
+
+.modal-item{
+
+}
+
+.divBotaoFechar{
+   display: flex;
+   justify-content: end;
+}
+
+.fechar-modal {
+    color: var(--azul-secundario);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    color: var(--amarelo);
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
