@@ -525,10 +525,6 @@ footer #codelab{
     color: #303030;
 }
 
-.modal-item{
-
-}
-
 .divBotaoFechar{
    display: flex;
    justify-content: end;
