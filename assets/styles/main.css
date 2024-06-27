@@ -65,7 +65,8 @@ section{
 }
 
 .inicio{
-    height: 100dvh;
+    padding: 1% 1% 0 1%;
+    height: fit-content;
     color: var(--text-bege);
     background-color: var(--bg-azul);
 }
@@ -142,6 +143,7 @@ section{
 
 .inicio__conteudo .introducao__logos img{
     height: 1.675rem;
+    margin-bottom: 1%;
 }
 
 .inicio__conteudo .baloes{
@@ -412,6 +414,10 @@ section{
 .redes__logos .logo{
     width: 3.5rem;
     transition: 0.3s;
+}
+
+.redes__logos #youtube{
+    width: 60px;
 }
 
 .redes__logos .logo:hover{
